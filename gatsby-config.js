@@ -44,6 +44,7 @@ module.exports = {
     `gatsby-plugin-emotion`,
     'gatsby-plugin-theme-ui',
     'gatsby-plugin-react-helmet',
+    'gatsby-plugin-instagram-embed',
     {
       resolve: `gatsby-transformer-remark`,
       options: {
