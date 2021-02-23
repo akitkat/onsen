@@ -17,10 +17,10 @@ try {
 
 module.exports = {
   siteMetadata: {
-    title: 'GCN',
+    title: '日本温泉百貨',
     description:
-      'A starter template to build amazing static websites with Gatsby, Contentful and Netlify',
-    siteUrl: 'https://gcn.netlify.com',
+      '日本各地の温泉情報満載！こころもからだも温泉でリフレッシュ！',
+    siteUrl: 'https://on-sen.work',
     image: '/images/share.jpg',
     menuLinks: [
       {
