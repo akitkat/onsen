@@ -157,8 +157,24 @@ export const globalStyles = css`
   }
 
   table {
+    margin: 0 0 24px;
+    border: 1px solid black;
     border-collapse: collapse;
     border-spacing: 0;
+    width: 100%;
+    th {
+      background: #ddd;
+      font-weight: 400;
+    }
+    th, td {
+      border: 1px solid #bbb;
+      padding: 10px 15px;
+      line-height: 2.2;
+    }
+  }
+
+  iframe h1 {
+    padding-top: 30px;
   }
 
   * {
