@@ -1,5 +1,5 @@
-import React from 'react'
 import Img from 'gatsby-image'
+import React from 'react'
 import styled from '@emotion/styled'
 
 const Wrapper = styled.section`
@@ -30,7 +30,7 @@ const BgImg = styled(Img)`
 
 const Title = styled.h1`
   z-index: 2;
-  font-size: 3em;
+  font-size: 1.8em;
   text-transform: capitalize;
   font-weight: 600;
   position: absolute;
