@@ -32,7 +32,7 @@ module.exports = {
         slug: '/privacy-policy/',
       },
       {
-        name: 'Contact',
+        name: 'お問い合わせ',
         slug: '/contact/',
       },
     ],

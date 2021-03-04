@@ -25,7 +25,7 @@ const Nav = styled.nav`
     &:first-of-type {
       position: relative;
       margin: 0;
-      flex-basis: 100%;
+      flex-basis: 70%;
     }
   }
 
