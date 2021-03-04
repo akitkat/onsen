@@ -1,0 +1,10 @@
+[[redirects]]
+from = "/archives/category2/*"
+to = "/tag/:splat"
+status = 301
+force = false
+[[redirects]]
+from = "/archives/category/*"
+to = "/tag/:splat"
+status = 301
+force = false
