@@ -28,8 +28,8 @@ module.exports = {
         slug: '/',
       },
       {
-        name: 'About',
-        slug: '/about/',
+        name: 'プライバシーポリシー',
+        slug: '/privacy-policy/',
       },
       {
         name: 'Contact',
