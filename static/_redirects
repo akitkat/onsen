@@ -1,3 +1,38 @@
 # category
 /archives/category2/*	/tag/:splat	301
 /archives/category/*	/tag/:splat	301
+
+# privacy-policy
+/archives/privacy-policy	/privacy-policy	301
+
+# article
+/archives/1041	gunma-baby-recommend-hot-spring-30	301
+/archives/1071	gunma-baby-recommend-hot-spring-15	301
+/archives/1081	gunma-baby-recommend-hot-spring-20	301
+/archives/1091	gunma-baby-recommend-hot-spring-11	301
+/archives/1101	tochigi-baby-recommend-hot-spring-22	301
+/archives/1111	saitama-baby-recommend-hot-spring-7	301
+/archives/1121	ibaraki-baby-recommend-hot-spring-7	301
+/archives/1131	kanagawa-baby-recommend-hot-spring-15	301
+/archives/1251	chiba-baby-recommend-hot-spring-14	301
+/archives/1261	kanagawa-baby-recommend-hot-spring-27	301
+/archives/1271	shizuoka-baby-recommend-hot-spring-20	301
+/archives/1281	shizuoka-baby-recommend-hot-spring-25	301
+/archives/1301	yamanashi-baby-recommend-hot-spring-30	301
+/archives/1521	hokkaido-baby-recommend-hot-spring-30	301
+/archives/1531	hokkaido-baby-recommend-hot-spring-25	301
+/archives/1541	hokkaido-baby-recommend-hot-spring-20	301
+/archives/1571	iwate-baby-recommend-hot-spring-33	301
+/archives/1591	yamagata-baby-recommend-hot-spring-28	301
+/archives/1611	fukushima-baby-recommend-hot-spring-35	301
+/archives/1641	niigata-baby-recommend-hot-spring-30	301
+/archives/1661	aichi-baby-recommend-hot-spring-12	301
+/archives/1701	mie-baby-recommend-hot-spring-20	301
+/archives/1861	kumamoto-baby-recommend-hot-spring-30	301
+/archives/1881	oita-baby-recommend-hot-spring-30	301
+/archives/1901	saga-baby-recommend-hot-spring-11	301
+/archives/2431	shizuoka-baby-recommend-hot-spring-20-2	301
+/archives/2461	nagano-baby-recommend-hot-spring-20	301
+/archives/2861	oita-baby-recommend-hot-spring-25	301
+/archives/2881	nagasaki-baby-recommend-hot-spring-12	301
+/archives/2901	fukuoka-baby-recommend-hot-spring-11	301
