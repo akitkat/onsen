@@ -17,7 +17,6 @@ jobs:
         with:
           node-version: '15.x'
       
-      - name: Build
       - run: npm ci
       - run: npm run build
         env:
@@ -26,7 +25,6 @@ jobs:
           GOOGLE_ANALYTICS: ${{ secrets.GOOGLE_ANALYTICS }}
           SPACE_ID: ${{ secrets.CONTENTFUL_SPACE_ID }}
 
-      - name: Publish
         uses: netlify/actions/cli@master
         with:
           args: deploy --dir=site --functions=functions
