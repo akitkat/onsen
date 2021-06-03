@@ -64,6 +64,9 @@ module.exports = {
           },
           {
             resolve: `gatsby-remark-images-anywhere`,
+            options: {
+              loading: 'eager',
+            }
           },
         ],
       },
