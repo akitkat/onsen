@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react'
-import styled from '@emotion/styled'
+
 import { Global } from '@emotion/core'
 import Menu from '../components/Menu'
-import Footer from '../components/Footer'
 import { globalStyles } from '../styles/globalStyles.js'
+import styled from '@emotion/styled'
 
 const Root = styled.div`
   font-family: ${props => props.theme.fonts.body};
@@ -45,7 +45,6 @@ const Layout = props => {
         <Menu />
         <div id="main">{props.children}</div>
       </div>
-      <Footer />
       <Global styles={globalStyles} />
     </Root>
   )
