@@ -45,6 +45,7 @@ module.exports = {
     'gatsby-plugin-theme-ui',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-instagram-embed',
+    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-transformer-remark`,
       options: {
@@ -60,6 +61,9 @@ module.exports = {
               backgroundColor: 'white',
               linkImagesToOriginal: false,
             },
+          },
+          {
+            resolve: `gatsby-remark-images-anywhere`,
           },
         ],
       },
