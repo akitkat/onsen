@@ -46,7 +46,7 @@ const Title = styled.h1`
 
 const Hero = props => (
   <Wrapper height={props.height}>
-    <BgImg fluid={props.image.fluid} backgroundColor={'#eeeeee'} loading="eager" />
+    <BgImg fluid={props.image.fluid} backgroundColor={'#eeeeee'} loading="eager" durationFadeIn={100} />
     <Title>{props.title}</Title>
   </Wrapper>
 )
