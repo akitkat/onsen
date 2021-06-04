@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 let contentfulConfig
 try {
   contentfulConfig = require('./.contentful')
@@ -80,7 +84,7 @@ module.exports = {
           : contentfulConfig.production,
     },
     {
-      resolve: 'gatsby-plugin-google-analytics',
+      resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: process.env.GOOGLE_ANALYTICS,
         head: true,
