@@ -49,6 +49,7 @@ module.exports = {
     'gatsby-plugin-theme-ui',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-instagram-embed',
+    `gatsby-plugin-preact`,
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-transformer-remark`,
