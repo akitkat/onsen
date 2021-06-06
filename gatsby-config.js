@@ -54,10 +54,11 @@ module.exports = {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
+          `gatsby-remark-autolink-headers`,
+          `gatsby-remark-table-of-contents`,
           {
             resolve: `gatsby-remark-prismjs`,
           },
-          `gatsby-remark-autolink-headers`,
           {
             resolve: `gatsby-remark-images-contentful`,
             options: {
