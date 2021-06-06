@@ -55,7 +55,6 @@ module.exports = {
       options: {
         plugins: [
           `gatsby-remark-autolink-headers`,
-          `gatsby-remark-prismjs`,
           {
             resolve: `gatsby-remark-table-of-contents`,
             options: {
@@ -78,6 +77,7 @@ module.exports = {
               loading: 'eager',
             }
           },
+          `gatsby-remark-prismjs`,
         ],
       },
     },
