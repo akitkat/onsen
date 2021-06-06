@@ -55,7 +55,13 @@ module.exports = {
       options: {
         plugins: [
           `gatsby-remark-autolink-headers`,
-          `gatsby-remark-table-of-contents`,
+          {
+            resolve: `gatsby-remark-table-of-contents`,
+            options: {
+              ordered: true,
+              toHeading: 2,
+            },
+          },
           {
             resolve: `gatsby-remark-prismjs`,
           },
