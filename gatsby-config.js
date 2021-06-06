@@ -55,15 +55,14 @@ module.exports = {
       options: {
         plugins: [
           `gatsby-remark-autolink-headers`,
+          `gatsby-remark-prismjs`,
           {
             resolve: `gatsby-remark-table-of-contents`,
             options: {
+              exclude: '目次',
               ordered: true,
               toHeading: 2,
             },
-          },
-          {
-            resolve: `gatsby-remark-prismjs`,
           },
           {
             resolve: `gatsby-remark-images-contentful`,
