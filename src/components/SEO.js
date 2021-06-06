@@ -1,6 +1,7 @@
-import React from 'react'
+import { graphql, useStaticQuery } from 'gatsby'
+
 import Helmet from 'react-helmet'
-import { useStaticQuery, graphql } from 'gatsby'
+import React from 'react'
 
 const SEO = ({ title, description, image }) => {
   const { site } = useStaticQuery(
@@ -25,7 +26,7 @@ const SEO = ({ title, description, image }) => {
   return (
     <Helmet
       htmlAttributes={{
-        lang: `en`,
+        lang: `jp`,
       }}
       title={title}
       defaultTitle={site.siteMetadata.title}
