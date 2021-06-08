@@ -77,6 +77,12 @@ module.exports = {
               loading: 'eager',
             }
           },
+          {
+            resolve: `gatsby-remark-external-links`,
+            options: {
+              rel: 'noopener noreferrer'
+            }
+          },
           `gatsby-remark-prismjs`,
         ],
       },
