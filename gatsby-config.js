@@ -37,7 +37,7 @@ module.exports = {
       },
       {
         name: 'お問い合わせ',
-        slug: '/contact/',
+        slug: 'https://docs.google.com/forms/d/e/1FAIpQLScgWp7F-M7s_tRlPKkBuawxEM0NxNGplaJE7lSOaR1NTsScdA/viewform?usp=sf_link',
       },
     ],
     postsPerFirstPage: 7,
