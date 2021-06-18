@@ -223,4 +223,20 @@ export const globalStyles = css`
   body:not(.user-is-tabbing) a:focus {
     outline: none;
   }
+
+  .btn-flat-dashed-filled {
+    display: inline-block;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    color: #67c5ff;
+    border: dashed 1px #67c5ff;
+    background: #f2fcff;
+    border-radius: 3px;
+    transition: .4s;
+  }
+  
+  .btn-flat-dashed-filled:hover {
+    background: #cbedff;
+    color: #FFF;
+  }
 `
