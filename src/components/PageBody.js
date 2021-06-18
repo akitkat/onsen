@@ -19,9 +19,15 @@ const Body = styled.div`
   }
   h2 {
     font-size: 1.25em;
+    background: #f7f7f7;
+    border-left: solid #f89174 5px;
+    padding: 14px 12px;
+    border-bottom: solid 3px #dadada;
   }
   h3 {
     font-size: 1em;
+    border-left: solid #ffc778 5px;
+    padding: 14px 12px;
   }
 
   p {
@@ -42,6 +48,7 @@ const Body = styled.div`
   }
   strong {
     font-weight: 600;
+    background: linear-gradient(transparent 60%, #ffd9ec 0%);
   }
   em {
     font-style: italic;
@@ -50,6 +57,12 @@ const Body = styled.div`
   ul,
   ol {
     margin: 0 0 2em 0;
+    background: #fffde8;
+    box-shadow: 0px 0px 0px 10px #fffde8;
+    border: dashed 2px #ffb03f;
+    border-radius: 5px;
+    padding: .5em;
+    font-size: .8em;
   }
 
   ul {
@@ -57,6 +70,7 @@ const Body = styled.div`
       list-style: disc;
       list-style-position: inside;
       line-height: 1.25;
+      list-style-type: none;
       &:last-child {
         margin: 0;
       }
