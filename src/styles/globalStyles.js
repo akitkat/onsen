@@ -233,6 +233,8 @@ export const globalStyles = css`
     background: #f2fcff;
     border-radius: 3px;
     transition: .4s;
+    width: 100%;
+    text-align: center;
   }
   
   .btn-flat-dashed-filled:hover {
