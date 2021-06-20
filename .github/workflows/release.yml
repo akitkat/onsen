@@ -18,12 +18,19 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      # checkout main branch
       - uses: actions/checkout@v2
-        with: 
+
+      # checkout release branch
+      - uses: actions/checkout@v2
+        with:
           ref: release
           
       - name: merge main branch into release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: git merge origin main
+        run: |
+          git merge origin main
+          git add .
+          git commit -m 'release'
+          git push origin release
