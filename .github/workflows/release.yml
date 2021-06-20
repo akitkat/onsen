@@ -20,17 +20,11 @@ jobs:
     steps:
       # checkout main branch
       - uses: actions/checkout@v2
-
-      # checkout release branch
-      - uses: actions/checkout@v2
+      
+      - name: merge main -> release
+      - uses: devmasx/merge-branch@v1.3.1
         with:
-          ref: release
-          
-      - name: merge main branch into release
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          git merge origin main
-          git add .
-          git commit -m 'release'
-          git push origin release
+          type: now
+          from_branch: main
+          target_branch: release
+          github_token: ${{ secrets.GITHUB_TOKEN }}
