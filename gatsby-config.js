@@ -123,7 +123,6 @@ module.exports = {
         update: process.env.GATSBY_UPDATE_SCHEMA_SNAPSHOT,
       },
     },
-    'gatsby-plugin-netlify',
     {
         resolve: `gatsby-plugin-google-adsense`,
         options: {
