@@ -22,7 +22,7 @@ jobs:
       - uses: actions/checkout@v2
       
       - name: merge main -> release
-      - uses: devmasx/merge-branch@v1.3.1
+        uses: devmasx/merge-branch@v1.3.1
         with:
           type: now
           from_branch: main
