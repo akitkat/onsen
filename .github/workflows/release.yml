@@ -28,3 +28,12 @@ jobs:
           from_branch: main
           target_branch: release
           github_token: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: actions/checkout@v2
+        with:
+          ref: release
+  
+      - name: git commit & push
+        run: |
+          git commit --allow-empty -m 'release'
+          git push origin release
