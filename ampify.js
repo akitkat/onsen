@@ -111,7 +111,7 @@ glob("public/amp/**/*.html", {
         }).css.toString()).join('');
         
         $('style').each((i, e) => {
-          css += $(e).html().replaceAll('!important;', '')
+          css += $(e).html().replace(/!important;/g, '')
         })
 
         $('style').remove();
