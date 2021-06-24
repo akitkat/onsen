@@ -78,7 +78,7 @@ glob("public/amp/**/*.html", {
         $('amp-analytics').remove();
         
         $('body').prepend(`<amp-analytics type="googleanalytics" id="analytics1">\
-          <script type="application/json">{"vars": {"account": ${process.env.GOOGLE_ANALYTICS}},"triggers": {"trackPageview": {"on": "visible","request": "pageview"}}}</script>\
+          <script type="application/json">{"vars": {"account": "${process.env.GOOGLE_ANALYTICS}"},"triggers": {"trackPageview": {"on": "visible","request": "pageview"}}}</script>\
           </amp-analytics>`);
 
         $('amp-img').attr('layout', 'responsive');
