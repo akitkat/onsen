@@ -9,6 +9,7 @@
     "@emotion/styled": "^11.3.0",
     "babel-plugin-styled-components": "^1.10.7",
     "chalk": "^4.1.1",
+    "cheerio": "^1.0.0-rc.10",
     "contentful-import": "^8.1.13",
     "gatsby": "^3.6.2",
     "gatsby-awesome-pagination": "^0.3.5",
