@@ -1,17 +1,18 @@
-import React from 'react'
-import { graphql } from 'gatsby'
-import Layout from '../components/Layout'
-import Hero from '../components/Hero'
 import Container from '../components/Container'
+import Hero from '../components/Hero'
+import Layout from '../components/Layout'
 import PageBody from '../components/PageBody'
-import TagList from '../components/TagList'
-import PostLinks from '../components/PostLinks'
 import PostDetails from '../components/PostDetails'
+import PostLinks from '../components/PostLinks'
+import React from 'react'
 import SEO from '../components/SEO'
+import TagList from '../components/TagList'
+import { graphql } from 'gatsby'
 
 const PostTemplate = ({ data, pageContext }) => {
   const {
     title,
+    slug,
     metaDescription,
     heroImage,
     body,
@@ -40,6 +41,7 @@ const PostTemplate = ({ data, pageContext }) => {
             : body.childMarkdownRemark.excerpt
         }
         image={ogImage}
+        slug={slug}
       />
       <Hero title={title} image={heroImage} height={'50vh'} />
       <Container>

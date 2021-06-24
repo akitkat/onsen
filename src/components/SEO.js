@@ -3,7 +3,7 @@ import { graphql, useStaticQuery } from 'gatsby'
 import Helmet from 'react-helmet'
 import React from 'react'
 
-const SEO = ({ title, description, image }) => {
+const SEO = ({ title, description, image, slug = null }) => {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -22,6 +22,7 @@ const SEO = ({ title, description, image }) => {
   const defaultImage = site.siteMetadata.siteUrl + site.siteMetadata.image
   const metaDescription = description || site.siteMetadata.description
   const metaImage = image || defaultImage
+  const ampHtml = slug ? `${site.siteMetadata.siteUrl}/amp/${slug}` : ''
 
   return (
     <Helmet
@@ -32,7 +33,6 @@ const SEO = ({ title, description, image }) => {
       defaultTitle={site.siteMetadata.title}
       titleTemplate={`%s | ${site.siteMetadata.title}`}
     >
-      <meta charSet="utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       {/* General tags */}
       <meta name="image" content={image} />
@@ -48,6 +48,8 @@ const SEO = ({ title, description, image }) => {
       <meta name="twitter:title" content={title} />
       <meta name="twitter:image" content={metaImage} />
       <meta name="twitter:description" content={metaDescription} />
+      <link rel="amphtml" href={ampHtml} />
+
     </Helmet>
   )
 }
