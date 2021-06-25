@@ -36,6 +36,7 @@
     "gatsby-source-contentful": "^5.6.1",
     "gatsby-transformer-remark": "^4.3.0",
     "glob": "^7.1.7",
+    "got": "^11.8.2",
     "inquirer": "^8.1.0",
     "lodash": "^4.17.15",
     "moment": "^2.24.0",
