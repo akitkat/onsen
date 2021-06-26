@@ -100,6 +100,7 @@ module.exports = {
       options: {
         trackingId: process.env.GOOGLE_ANALYTICS,
         head: true,
+        allowLinker: true
       },
     },
     'gatsby-plugin-sitemap',

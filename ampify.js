@@ -6,6 +6,21 @@ const cheerio = require('cheerio');
 
 const inputDir = 'public/amp';
 
+const googleanAlytics = {
+  vars: {
+    account: process.env.GOOGLE_ANALYTICS || '',
+  },
+  linkers: {
+    enabled: true,
+  },
+  triggers: {
+    trackPageview: {
+      on: 'visible',
+      request: 'pageview'
+    }
+  }
+}
+
 const cheerioOptions = {
   normalizeWhitespace: false,
   xmlMode: false,
@@ -77,9 +92,7 @@ glob("public/amp/**/*.html", {
         $('head').append('<script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>');
         $('amp-analytics').remove();
         
-        $('body').prepend(`<amp-analytics type="googleanalytics" id="analytics1">\
-          <script type="application/json">{"vars": {"account": "${process.env.GOOGLE_ANALYTICS}"},"triggers": {"trackPageview": {"on": "visible","request": "pageview"}}}</script>\
-          </amp-analytics>`);
+        $('body').prepend(`<amp-analytics type="googleanalytics" id="analytics1"><script type="application/json">${JSON.stringify(googleanAlytics)}</script></amp-analytics>`);
 
         $('amp-img').attr('layout', 'responsive');
         $('amp-img').attr('width', '450');
