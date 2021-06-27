@@ -241,4 +241,24 @@ export const globalStyles = css`
     background: #cbedff;
     color: #FFF;
   }
+  
+  .btn-flat-dashed-filled[target="_blank"] {
+    position:relative;
+    padding-right: 5px;
+  }
+
+  .btn-flat-dashed-filled[target="_blank"]:after {
+    content: '';
+    display: inline-block;
+    height: 6px;
+    width: 10px;
+    margin-bottom: 2px;
+    margin-left: 3px;
+    border-top: 0px #E56B21 solid;
+    border-right: 0px #E56B21 solid;
+    border-bottom: 1px #FDF0E9 solid;
+    border-left: 1px #FDF0E9 solid;
+    background-color: #E56B21;
+    box-shadow: -2px 2px 0 -1px #E56B21;
+  }
 `
