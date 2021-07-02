@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# cache clear
+gatsby clean
+
 # build
 gatsby build
 
