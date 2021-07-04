@@ -6,8 +6,10 @@ import PostDetails from '../components/PostDetails'
 import PostLinks from '../components/PostLinks'
 import React from 'react'
 import SEO from '../components/SEO'
+import Sidebar from '../components/Sidebar'
 import TagList from '../components/TagList'
 import { graphql } from 'gatsby'
+import styled from '@emotion/styled'
 
 const PostTemplate = ({ data, pageContext }) => {
   const {
@@ -30,6 +32,11 @@ const PostTemplate = ({ data, pageContext }) => {
   } catch (error) {
     ogImage = null
   }
+  
+  const ContentWrapper = styled.div`
+    display: flex;
+    justify-content: space-between;
+  `
 
   return (
     <Layout>
@@ -45,12 +52,17 @@ const PostTemplate = ({ data, pageContext }) => {
       />
       <Hero title={title} image={heroImage} height={'50vh'} />
       <Container>
-        {tags && <TagList tags={tags} basePath={basePath} />}
-        <PostDetails
-          date={publishDate}
-          timeToRead={body.childMarkdownRemark.timeToRead}
-        />
-        <PageBody body={body} />
+        <ContentWrapper>
+          <div>
+            {tags && <TagList tags={tags} basePath={basePath} />}
+            <PostDetails
+              date={publishDate}
+              timeToRead={body.childMarkdownRemark.timeToRead}
+            />
+            <PageBody body={body} />
+          </div>
+          <Sidebar />
+        </ContentWrapper>
       </Container>
       <PostLinks previous={previous} next={next} basePath={basePath} />
     </Layout>
