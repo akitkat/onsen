@@ -1,5 +1,6 @@
 import { graphql, useStaticQuery } from "gatsby"
 
+import Adsense from './Adsense'
 import ArticleItem from './ArticleItem'
 import React from 'react'
 import styled from '@emotion/styled'
@@ -64,6 +65,7 @@ const Sidebar = () => {
           )
         })}
       </List>
+      <Adsense dataAdSlot={9657326887} />
     </Wrapper>
   )
 }
