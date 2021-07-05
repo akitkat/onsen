@@ -35,7 +35,7 @@ const ArticleItem = props => {
   return (
     <Wrapper>
       <ThumbnailWrapper>
-        <Link to={props.slug}>
+        <Link to={`/${props.slug}`}>
           <Img fluid={props.heroImage.fluid} backgroundColor={'#eeeeee'} />
         </Link>
       </ThumbnailWrapper>
