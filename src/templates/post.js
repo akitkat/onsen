@@ -3,7 +3,6 @@ import Hero from '../components/Hero'
 import Layout from '../components/Layout'
 import PageBody from '../components/PageBody'
 import PostDetails from '../components/PostDetails'
-import PostLinks from '../components/PostLinks'
 import React from 'react'
 import SEO from '../components/SEO'
 import Sidebar from '../components/Sidebar'
@@ -64,7 +63,6 @@ const PostTemplate = ({ data, pageContext }) => {
           <Sidebar />
         </ContentWrapper>
       </Container>
-      <PostLinks previous={previous} next={next} basePath={basePath} />
     </Layout>
   )
 }
