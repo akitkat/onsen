@@ -5,6 +5,7 @@ import PageBody from '../components/PageBody'
 import PostDetails from '../components/PostDetails'
 import React from 'react'
 import SEO from '../components/SEO'
+import ShareButtonList from '../components/ShareButtonList'
 import Sidebar from '../components/Sidebar'
 import TagList from '../components/TagList'
 import { graphql } from 'gatsby'
@@ -21,7 +22,7 @@ const PostTemplate = ({ data, pageContext }) => {
     tags,
   } = data.contentfulPost
 
-  const { basePath } = pageContext
+  const { basePath, siteUrl } = pageContext
 
   let ogImage
   try {
@@ -51,6 +52,7 @@ const PostTemplate = ({ data, pageContext }) => {
         <ContentWrapper>
           <div>
             {tags && <TagList tags={tags} basePath={basePath} />}
+            <ShareButtonList title={title} url={`${siteUrl}/${slug}`} />
             <PostDetails
               date={publishDate}
               timeToRead={body.childMarkdownRemark.timeToRead}
