@@ -21,8 +21,6 @@ const PostTemplate = ({ data, pageContext }) => {
     tags,
   } = data.contentfulPost
 
-  const previous = pageContext.prev
-  const next = pageContext.next
   const { basePath } = pageContext
 
   let ogImage
@@ -31,7 +29,6 @@ const PostTemplate = ({ data, pageContext }) => {
   } catch (error) {
     ogImage = null
   }
-  
   const ContentWrapper = styled.div`
     display: flex;
     justify-content: space-between;
