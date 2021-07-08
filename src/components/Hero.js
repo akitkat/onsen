@@ -4,6 +4,7 @@ import styled from '@emotion/styled'
 
 const Wrapper = styled.section`
   position: relative;
+  min-height: 300px;
   height: auto;
   @media (min-width: ${props => props.theme.responsive.small}) {
     height: ${props => props.height || 'auto'};
