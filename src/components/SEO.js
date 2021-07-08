@@ -33,6 +33,7 @@ const SEO = ({ title, description, image, slug = null }) => {
       defaultTitle={site.siteMetadata.title}
       titleTemplate={`%s | ${site.siteMetadata.title}`}
     >
+      <script data-ad-client={process.env.GOOGLE_ADSENSE} async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       {/* General tags */}
       <meta name="image" content={image} />

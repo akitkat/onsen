@@ -124,11 +124,5 @@ module.exports = {
         update: process.env.GATSBY_UPDATE_SCHEMA_SNAPSHOT,
       },
     },
-    {
-        resolve: `gatsby-plugin-google-adsense`,
-        options: {
-            publisherId: process.env.GOOGLE_ADSENSE
-        },
-    },
   ],
 }
