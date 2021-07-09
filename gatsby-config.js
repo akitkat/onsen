@@ -40,6 +40,24 @@ module.exports = {
         slug: 'https://docs.google.com/forms/d/e/1FAIpQLScgWp7F-M7s_tRlPKkBuawxEM0NxNGplaJE7lSOaR1NTsScdA/viewform?usp=sf_link',
       },
     ],
+    footerMenuLinks: [
+      {
+        name: 'Home',
+        slug: '/',
+      },
+      {
+        name: 'プライバシーポリシー',
+        slug: '/privacy-policy/',
+      },
+      {
+        name: 'お問い合わせ',
+        slug: 'https://docs.google.com/forms/d/e/1FAIpQLScgWp7F-M7s_tRlPKkBuawxEM0NxNGplaJE7lSOaR1NTsScdA/viewform?usp=sf_link',
+      },
+      {
+        name: 'プロフィール',
+        slug: '/profile',
+      },
+    ],
     postsPerFirstPage: 7,
     postsPerPage: 6,
     basePath: '/',

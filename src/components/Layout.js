@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 
+import Footer from '../components/Footer'
 import { Global } from '@emotion/react'
 import Menu from '../components/Menu'
 import { globalStyles } from '../styles/globalStyles.js'
@@ -45,6 +46,7 @@ const Layout = props => {
         <Menu />
         <div id="main">{props.children}</div>
       </div>
+      <Footer />
       <Global styles={globalStyles} />
     </Root>
   )
