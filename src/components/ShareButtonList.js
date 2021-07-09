@@ -23,7 +23,7 @@ const ButtonWrapper = styled.div`
 
 const ShareButtonList = ({title, url}) => {
   return (
-    <Wrapper>
+    <Wrapper class="share-button-list">
       <ButtonWrapper>
         <FacebookShareButton url={url}>
           <FacebookIcon size={40} round />

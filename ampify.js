@@ -103,6 +103,8 @@ glob("public/amp/**/*.html", {
         $('section').removeAttr('height');
         $('head').append(`<link rel="canonical" href="${config.siteMetadata.siteUrl}/${urlPath.split`/`[1]}">`)
 
+        $('.share-button-list').remove()
+
         const pictures = $('picture');
         if (pictures.length > 0) {
           pictures.children('source').remove();
