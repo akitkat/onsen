@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 
 const Adsense = ( props ) => {
   const { currentPath, dataAdSlot} = props
-  
+
   useEffect(() => {
     if (window) {
     window.adsbygoogle = window.adsbygoogle || []
@@ -11,10 +11,10 @@ const Adsense = ( props ) => {
   }, [currentPath]);
 
   return (
-    <ins 
+    <ins
       className="adsbygoogle"
       style={{display:'block'}}
-      data-ad-client={process.env.GOOGLE_ADSENSE}
+      data-ad-client="ca-pub-1105473512670263"
       data-ad-slot={dataAdSlot}
       data-ad-format='auto'
       data-full-width-responsive='true'
