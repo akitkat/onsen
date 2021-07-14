@@ -1,5 +1,7 @@
 #!/bin/sh
 
+mkdir images
+
 # cache clear
 gatsby clean
 

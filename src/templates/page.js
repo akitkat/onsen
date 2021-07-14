@@ -1,10 +1,10 @@
-import React from 'react'
-import { graphql } from 'gatsby'
-import Layout from '../components/Layout'
 import Container from '../components/Container'
-import PageTitle from '../components/PageTitle'
+import Layout from '../components/Layout'
 import PageBody from '../components/PageBody'
+import PageTitle from '../components/PageTitle'
+import React from 'react'
 import SEO from '../components/SEO'
+import { graphql } from 'gatsby'
 
 const PageTemplate = ({ data }) => {
   const { title, metaDescription, body } = data.contentfulPage
@@ -39,6 +39,7 @@ export const query = graphql`
       body {
         childMarkdownRemark {
           html
+          htmlAst
           excerpt(pruneLength: 320)
         }
       }
