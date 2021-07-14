@@ -69,6 +69,18 @@ glob("public/amp/**/*.html", {
           this.name = 'amp-' + this.name;
         });
 
+        $('amp-img').each(function() {
+          $(this).removeAttr('decoding')
+        });
+
+        $('amp-img[data-src], amp-img[data-srcset]').each(function() {
+          console.log($(this).data('src'))
+          $(this).attr('src', $(this).data('src'))
+          $(this).attr('srcset', $(this).data('srcset'))
+          $(this).removeAttr('data-src')
+          $(this).removeAttr('data-srcset')
+        });
+
         $('.main-pane amp-img, .page amp-img').each(function(){
           if($(this).attr('data-layout')) {
             $(this).attr('layout', $(this).attr('data-layout'));
