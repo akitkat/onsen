@@ -75,7 +75,7 @@ const RakutenTravelItem = props => (
       </NoticeTitleArea>
       <ExternalDescription>
         <RakutenTravelBannerWrapper>
-          <img src="https://hbb.afl.rakuten.co.jp/hsb/20cb2c73.10cfbe16.200c9359.c9357672/" />
+          <img src="https://hbb.afl.rakuten.co.jp/hsb/20cb2c73.10cfbe16.200c9359.c9357672/" width="45" height="89" alt="Rakuten Travel" />
         </RakutenTravelBannerWrapper>
         <RakutenTravelPrice>料金 {props.price} 円～</RakutenTravelPrice>
       </ExternalDescription>
