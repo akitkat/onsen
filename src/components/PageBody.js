@@ -1,4 +1,6 @@
+import HotelInfoItem from "../components/HotelInfoItem"
 import React from 'react'
+import RehypeReact from "rehype-react"
 import styled from '@emotion/styled'
 require('prismjs/themes/prism.css')
 
@@ -111,10 +113,17 @@ const Body = styled.div`
 `
 
 const PageBody = props => {
+  const renderAst = new RehypeReact({
+    createElement: React.createElement,
+    components: {
+      'hotel-info-item': HotelInfoItem,
+    }
+  }).Compiler
+
   return (
-    <Body
-      dangerouslySetInnerHTML={{ __html: props.body.childMarkdownRemark.html }}
-    />
+    <Body>
+      {renderAst(props.body.childMarkdownRemark.htmlAst)}
+    </Body>
   )
 }
 

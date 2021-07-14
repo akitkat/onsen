@@ -96,6 +96,7 @@ export const query = graphql`
         childMarkdownRemark {
           timeToRead
           html
+          htmlAst
           excerpt(pruneLength: 320)
         }
       }

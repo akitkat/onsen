@@ -68,11 +68,19 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     `gatsby-plugin-preact`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-image`,
+    `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
           `gatsby-remark-autolink-headers`,
+          {
+            resolve: `gatsby-remark-component`,
+            options: {
+              components: ['hotel-info-item']
+            }
+          },
           {
             resolve: `gatsby-remark-table-of-contents`,
             options: {
@@ -142,5 +150,12 @@ module.exports = {
         update: process.env.GATSBY_UPDATE_SCHEMA_SNAPSHOT,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: './src/images/',
+      },
+    }
   ],
 }
