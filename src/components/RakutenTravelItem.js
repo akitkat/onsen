@@ -67,7 +67,7 @@ const RakutenTravelPrice = styled.span`
 const RakutenTravelItem = props => (
   <Wrapper>
     <ExternalLink href={props.url}>
-      <NoticeTitleArea class="notice-title-area">
+      <NoticeTitleArea>
         <NoticeCardLabelWrapper>
           <NoticeCardLabel></NoticeCardLabel>
         </NoticeCardLabelWrapper>

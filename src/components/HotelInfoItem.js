@@ -15,6 +15,7 @@ const Wrapper = styled.div`
 
 const ThumbnailWrapper = styled.div`
   height: 250px;
+  width: 100%;
   margin: 0 auto 16px auto;
   overflow: hidden;
   background: #fcfbf8;
@@ -62,8 +63,6 @@ const InfoWrapper = styled.div`
 `
 
 const RakutenTravelWrapper = styled.div`
-  display: flex;
-  justify-content: space-between;
   padding-top: 12px;
 `
 
@@ -136,7 +135,7 @@ const HotelInfoItem = props => {
       </InfoWrapper>
       <ExternalLink href={url}>
         <RakutenTravelWrapper>
-          <RakutenTravelItem url={url} title={props.title} price={props.price} />
+          <RakutenTravelItem url={url} title={props.title} price={props.price} width="100%" />
         </RakutenTravelWrapper>
       </ExternalLink>
       <TableWrapper>

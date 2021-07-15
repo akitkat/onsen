@@ -15,6 +15,11 @@ import styled from '@emotion/styled'
 const Wrapper = styled.div`
   display: flex;
   padding-bottom: 24px;
+  margin: 0 auto 2em;
+  max-width: ${props => props.theme.sizes.maxWidthCentered};
+  @media screen and (max-width: ${props => props.theme.responsive.small}) {
+    margin: 0;
+  }
 `
 
 const ButtonWrapper = styled.div`
@@ -23,7 +28,7 @@ const ButtonWrapper = styled.div`
 
 const ShareButtonList = ({title, url}) => {
   return (
-    <Wrapper class="share-button-list">
+    <Wrapper id="shareButtonList">
       <ButtonWrapper>
         <FacebookShareButton url={url}>
           <FacebookIcon size={40} round />

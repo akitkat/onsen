@@ -11,6 +11,13 @@ import TagList from '../components/TagList'
 import { graphql } from 'gatsby'
 import styled from '@emotion/styled'
 
+const ContentWrapper = styled.div`
+  @media screen and (min-width: ${props => props.theme.responsive.medium}) {
+    display: flex;
+    justify-content: space-between;
+  }
+`
+
 const PostTemplate = ({ data, pageContext }) => {
   const {
     title,
@@ -30,10 +37,6 @@ const PostTemplate = ({ data, pageContext }) => {
   } catch (error) {
     ogImage = null
   }
-  const ContentWrapper = styled.div`
-    display: flex;
-    justify-content: space-between;
-  `
 
   return (
     <Layout>
