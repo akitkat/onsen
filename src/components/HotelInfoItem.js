@@ -159,7 +159,7 @@ const HotelInfoItem = props => {
           <CoolButton title="クーポンを確認する" />
         </ExternalLink>
         <ExternalLink href={url}>
-          <CoolButton title="空席を確認する" />
+          <CoolButton title="空室を確認する" />
         </ExternalLink>
       </ButtonWrapper>
     </Wrapper>
