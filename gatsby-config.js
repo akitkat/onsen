@@ -155,6 +155,12 @@ module.exports = {
         name: `images`,
         path: './src/images/',
       },
+    },
+    {
+      resolve: `@isamrish/gatsby-plugin-google-adsense`,
+      options: {
+        googleAdClientId: process.env.GOOGLE_ADSENSE,
+      }
     }
   ],
 }
