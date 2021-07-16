@@ -141,7 +141,6 @@ module.exports = {
         icon: './static/images/favicon.png',
       },
     },
-    'gatsby-plugin-offline',
     {
       resolve: `gatsby-plugin-schema-snapshot`,
       options: {
