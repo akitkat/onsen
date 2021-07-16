@@ -69,6 +69,7 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-image`,
     `gatsby-transformer-sharp`,
+    `gatsby-plugin-remove-serviceworker`,
     {
       resolve: `gatsby-transformer-remark`,
       options: {
