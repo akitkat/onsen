@@ -27,11 +27,14 @@ const SEO = ({ title, description, image, slug = null, publishDateISO = null, up
   const jsonLd = {
     "@context" : "http://schema.org",
     "@type" : "Article",
-    "name" : title,
     "author" : {
       "@type" : "Person",
       "name" : "akitkat"
     },
+    "publisher": {
+      "@id": `${site.siteMetadata.siteUrl}/#organization`
+    },
+    "headline": title,
     "datePublished" : publishDateISO,
     "dateModified": updatedAtISO,
     "image" : image,
