@@ -32,7 +32,12 @@ const SEO = ({ title, description, image, slug = null, publishDateISO = null, up
       "name" : "akitkat"
     },
     "publisher": {
-      "@id": `${site.siteMetadata.siteUrl}/#organization`
+      "@type": "Organization",
+      "name": site.siteMetadata.title,
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://on-sen.work/icons/icon-144x144.png"
+      }
     },
     "headline": title,
     "datePublished" : publishDateISO,
