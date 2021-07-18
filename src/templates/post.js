@@ -27,6 +27,8 @@ const PostTemplate = ({ data, pageContext }) => {
     body,
     publishDate,
     tags,
+    publishDateISO,
+    updatedAtISO
   } = data.contentfulPost
 
   const { basePath, siteUrl } = pageContext
@@ -49,6 +51,8 @@ const PostTemplate = ({ data, pageContext }) => {
         }
         image={ogImage}
         slug={slug}
+        publishDateISO={publishDateISO}
+        updatedAtISO={updatedAtISO}
       />
       <Hero title={title} image={heroImage} height={'50vh'} />
       <Container>
@@ -103,6 +107,7 @@ export const query = graphql`
           excerpt(pruneLength: 320)
         }
       }
+      updatedAtISO: updatedAt(formatString: "YYYY-MM-DD")
     }
   }
 `

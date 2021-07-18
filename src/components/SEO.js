@@ -3,7 +3,7 @@ import { graphql, useStaticQuery } from 'gatsby'
 import Helmet from 'react-helmet'
 import React from 'react'
 
-const SEO = ({ title, description, image, slug = null }) => {
+const SEO = ({ title, description, image, slug = null, publishDateISO = null, updatedAtISO = null }) => {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -23,6 +23,19 @@ const SEO = ({ title, description, image, slug = null }) => {
   const metaDescription = description || site.siteMetadata.description
   const metaImage = image || defaultImage
   const ampHtml = slug ? `${site.siteMetadata.siteUrl}/amp/${slug}` : ''
+
+  const jsonLd = {
+    "@context" : "http://schema.org",
+    "@type" : "Article",
+    "name" : title,
+    "author" : {
+      "@type" : "Person",
+      "name" : "akitkat"
+    },
+    "datePublished" : publishDateISO,
+    "dateModified": updatedAtISO,
+    "image" : image,
+  }
 
   return (
     <Helmet
@@ -50,6 +63,7 @@ const SEO = ({ title, description, image, slug = null }) => {
       <meta name="twitter:description" content={metaDescription} />
       <link rel="amphtml" href={ampHtml} />
 
+      {updatedAtISO && <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>}
     </Helmet>
   )
 }
