@@ -65,7 +65,7 @@ const Sidebar = () => {
           )
         })}
       </List>
-      <Adsense dataAdSlot={9657326887} />
+      {/* <Adsense dataAdSlot={9657326887} /> */}
     </Wrapper>
   )
 }
