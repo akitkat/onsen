@@ -25,7 +25,6 @@ const PostTemplate = ({ data, pageContext }) => {
     metaDescription,
     heroImage,
     body,
-    publishDate,
     tags,
     publishDateISO,
     updatedAtISO
@@ -61,8 +60,7 @@ const PostTemplate = ({ data, pageContext }) => {
             {tags && <TagList tags={tags} basePath={basePath} />}
             <ShareButtonList title={title} url={`${siteUrl}/${slug}`} />
             <PostDetails
-              date={publishDate}
-              timeToRead={body.childMarkdownRemark.timeToRead}
+              date={updatedAtISO}
             />
             <PageBody body={body} />
           </div>
