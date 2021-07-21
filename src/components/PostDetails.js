@@ -16,7 +16,7 @@ const Date = styled.p`
 const PostDetails = props => {
   return (
     <Wrapper>
-      <Date>📅 最終更新日：<time datatime={props.date}>{props.date}</time></Date>
+      <Date>📅 最終更新日：{`<time datatime="${props.date}">${props.date}</time>`}</Date>
     </Wrapper>
   )
 }
