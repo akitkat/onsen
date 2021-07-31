@@ -96,11 +96,9 @@ const TableTd = styled.th`
 `
 
 const HotelInfoItem = props => {
-  const url = `https://hb.afl.rakuten.co.jp/hgc/g0190dd6.uc73i72f.g0190dd6.uc73jb24/?pc=https%3A%2F%2Ftravel.rakuten.co.jp%2FHOTEL%2F${props.no}`
-
-  const query = `
+  const data = useStaticQuery(graphql`
     query {
-      file(filter: {name: {eq: "hotelInfoItem"}, , internal: {content: {eq: "${url}"}}) {
+      allFile(filter: {name: {eq: "hotelInfoItem"}}) {
         edges {
           node {
             childImageSharp {
@@ -113,10 +111,10 @@ const HotelInfoItem = props => {
         }
       }
     }
-  `
+  `)
 
-  const data = useStaticQuery(graphql(query))
-  const image = getImage(data.file)
+  const url = `https://hb.afl.rakuten.co.jp/hgc/g0190dd6.uc73i72f.g0190dd6.uc73jb24/?pc=https%3A%2F%2Ftravel.rakuten.co.jp%2FHOTEL%2F${props.no}`
+  const image = getImage(data.allFile.edges.find(e => e.node.internal.content === props.image).node)
 
   return (
     <Wrapper>
