@@ -1,9 +1,6 @@
 #!/bin/sh
 
-mkdir src/images
-
 # hotels.json
-rm -rf static/data/hotels.json
 wget "https://script.google.com/macros/s/AKfycbzUSxFWZiYT8lRRPugCbxQzoGapYa3yPK9cP28_l6_1KHtd-byeB9eFhqp-g0-BupV2_w/exec" -O 'hotels.json'
 mv hotels.json static/data/
 

@@ -3,7 +3,7 @@ import { graphql, useStaticQuery } from "gatsby"
 
 import CoolButton from './Button/CoolButton'
 import ExternalLink from './ExternalLink'
-import RakutenTravelItem from './RakutenTravelItem'
+import HotelMediaItem from './Hotel/HotelMediaItem'
 import React from 'react'
 import styled from '@emotion/styled'
 
@@ -64,7 +64,7 @@ const InfoWrapper = styled.div`
   }
 `
 
-const RakutenTravelWrapper = styled.div`
+const HotelMediaItemWrapper = styled.div`
   padding-top: 12px;
 `
 
@@ -97,6 +97,17 @@ const TableTd = styled.th`
   background: #fff;
 `
 
+const HotelMediaList = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  @media screen and (min-width: ${props => props.theme.responsive.large}) {
+    & > div {
+      width: 50%;
+    }
+  }
+`
+
 const HotelInfoItem = props => {
   const data = useStaticQuery(graphql`
     query {
@@ -119,6 +130,9 @@ const HotelInfoItem = props => {
   const image = getImage(data.allFile.edges.find(e => e.node.internal.content === props.image).node)
 
   const hotel = JSON.parse(JSON.stringify(jsonHotels)).result_.find(e => e.hotelNo == props.no)
+  const jalanUrl = `https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3599199&pid=887319502&vc_url=${encodeURI(hotel.jalanUrl)}`
+  const ikyuUrl = `https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3599199&pid=887319524&vc_url=${encodeURI(hotel.ikyuUrl)}`
+  const yahooUrl = `https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3599199&pid=887316004&vc_url=${encodeURI(hotel.yahooUrl)}%3Fsc_e%3Dafvc_ml`
 
   return (
     <Wrapper>
@@ -137,11 +151,63 @@ const HotelInfoItem = props => {
           <p>{props.description}</p>
         </DescriptionWrapper>
       </InfoWrapper>
-      <ExternalLink href={url}>
-        <RakutenTravelWrapper>
-          <RakutenTravelItem url={url} title={hotel.hotelName} price={hotel.price} width="100%" />
-        </RakutenTravelWrapper>
-      </ExternalLink>
+      <HotelMediaList>
+        <div>
+          <HotelMediaItemWrapper>
+            <HotelMediaItem
+              url={url}
+              title={hotel.hotelName}
+              logoUrl="https://hbb.afl.rakuten.co.jp/hsb/20cb2c73.10cfbe16.200c9359.c9357672/"
+              price={hotel.price}
+              alt="Rakuten Travel"
+              color="#1AAB8A"
+              width="100%"
+            />
+          </HotelMediaItemWrapper>
+        </div>
+        {! ['NULL', ''].includes(hotel.jalanUrl) && (
+          <div>
+            <HotelMediaItemWrapper>
+              <HotelMediaItem
+                url={jalanUrl}
+                title={hotel.hotelName}
+                logoUrl="https://aff.valuecommerce.ne.jp/img/siteLogo/2130725.gif"
+                alt="じゃらん"
+                color="#EB5C02"
+                width="100%"
+              />
+            </HotelMediaItemWrapper>
+          </div>
+        )}
+        {! ['NULL', ''].includes(hotel.ikyuUrl) && (
+          <div>
+            <HotelMediaItemWrapper>
+              <HotelMediaItem
+                url={ikyuUrl}
+                title={hotel.hotelName}
+                logoUrl="https://aff.valuecommerce.ne.jp/img/siteLogo/221.gif"
+                alt="一休"
+                color="#294B77"
+                width="100%"
+              />
+            </HotelMediaItemWrapper>
+          </div>
+        )}
+        {! ['NULL', ''].includes(hotel.yahooUrl) && (
+          <div>
+            <HotelMediaItemWrapper>
+              <HotelMediaItem
+                url={yahooUrl}
+                title={hotel.hotelName}
+                logoUrl="https://aff.valuecommerce.ne.jp/img/siteLogo/2244419.gif"
+                alt="Yahoo!トラベル"
+                color="#FF446A"
+                width="100%"
+              />
+            </HotelMediaItemWrapper>
+          </div>
+        )}
+      </HotelMediaList>
       <TableWrapper>
         <Table>
           <tr>
