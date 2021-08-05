@@ -8,4 +8,4 @@ contentful-import-error-log*
 .contentful.json
 contentful-export*.json
 contentful/
-static/data/
+static/data/hotels.json
