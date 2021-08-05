@@ -7,6 +7,8 @@ import RakutenTravelItem from './RakutenTravelItem'
 import React from 'react'
 import styled from '@emotion/styled'
 
+const jsonHotels = require('../../static/data/hotels.json')
+
 const Wrapper = styled.div`
   padding-top: 24px;
   display: flex;
@@ -116,17 +118,19 @@ const HotelInfoItem = props => {
   const url = `https://hb.afl.rakuten.co.jp/hgc/g0190dd6.uc73i72f.g0190dd6.uc73jb24/?pc=https%3A%2F%2Ftravel.rakuten.co.jp%2FHOTEL%2F${props.no}`
   const image = getImage(data.allFile.edges.find(e => e.node.internal.content === props.image).node)
 
+  const hotel = JSON.parse(JSON.stringify(jsonHotels)).result_.find(e => e.hotelNo == props.no)
+
   return (
     <Wrapper>
       <div>
         <ExternalLink href={url}>
-          <h2>{props.title}</h2>
+          <h2>{hotel.hotelName}</h2>
         </ExternalLink>
       </div>
       <InfoWrapper>
         <ThumbnailWrapper>
           <ExternalLink href={url}>
-            <GatsbyImage image={image} alt={props.title} />
+            <GatsbyImage image={image} alt={hotel.hotelName} />
           </ExternalLink>
         </ThumbnailWrapper>
         <DescriptionWrapper>
@@ -135,22 +139,22 @@ const HotelInfoItem = props => {
       </InfoWrapper>
       <ExternalLink href={url}>
         <RakutenTravelWrapper>
-          <RakutenTravelItem url={url} title={props.title} price={props.price} width="100%" />
+          <RakutenTravelItem url={url} title={hotel.hotelName} price={hotel.price} width="100%" />
         </RakutenTravelWrapper>
       </ExternalLink>
       <TableWrapper>
         <Table>
           <tr>
             <TableTh>住所</TableTh>
-            <TableTd>{props.address}</TableTd>
+            <TableTd>{hotel.address}</TableTd>
           </tr>
           <tr>
             <TableTh>アクセス</TableTh>
-            <TableTd>{props.access}</TableTd>
+            <TableTd>{hotel.access}</TableTd>
           </tr>
           <tr>
             <TableTh>Tel</TableTh>
-            <TableTd>{props.tel}</TableTd>
+            <TableTd>{hotel.tel}</TableTd>
           </tr>
         </Table>
       </TableWrapper>
