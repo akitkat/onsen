@@ -17,6 +17,17 @@ const googleanAlytics = {
     trackPageview: {
       on: 'visible',
       request: 'pageview'
+    },
+    elementClicks: {
+      on: "click",
+      selector: ".external-link",
+      request: "event",
+      vars: {
+        eventCategory: "External Link",
+        eventAction: "Click",
+        eventLabel: "${eventLabel}",
+        eventValue: "${eventValue}"
+      }
     }
   }
 }

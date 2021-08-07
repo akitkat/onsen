@@ -8,14 +8,17 @@ const Link = styled.a`
 const ExternalLink = props => {
   return (
     <Link
+      class="external-link"
       href={props.href}
       rel="noopener noreferrer nofollow"
       target="_blank"
+      data-vars-event-label={props.ga.eventLabel}
+      data-vars-event-value={props.ga.eventValue}
       onClick={e => {
         trackCustomEvent({
           category: "External Link",
           action: "Click",
-          label: props.gaLabel ?? '',
+          label: props.ga.eventLabel ?? '',
         })
       }}
     >

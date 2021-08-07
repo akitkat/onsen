@@ -70,7 +70,10 @@ const RakutenTravelItem = props => {
     <Wrapper>
       <ExternalLink
         href={props.url}
-        gaLabel={`HotelMediaItem_${props.hotelNo}_${props.name}`}
+        ga={{
+          eventLabel: `HotelMediaItem_${props.name}`,
+          eventValue: props.hotelNo,
+        }}
       >
         <NoticeTitleArea>
           <NoticeCardLabelWrapper>

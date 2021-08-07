@@ -137,13 +137,25 @@ const HotelInfoItem = props => {
   return (
     <Wrapper>
       <div>
-        <ExternalLink href={url} gaLabel={`HotelInfoItem_hotelName_${hotel.hotelNo}`}>
+        <ExternalLink
+          href={url}
+          ga={{
+            eventLabel: 'HotelInfoItem_hotelName',
+            eventValue: hotel.hotelNo,
+          }}
+        >
           <h2>{hotel.hotelName}</h2>
         </ExternalLink>
       </div>
       <InfoWrapper>
         <ThumbnailWrapper>
-          <ExternalLink href={url} gaLabel={`HotelInfoItem_thumbnail_${hotel.hotelNo}`}>
+          <ExternalLink
+            href={url}
+            ga={{
+              eventLabel: 'HotelInfoItem_thumbnail',
+              eventValue: hotel.hotelNo,
+            }}
+          >
             <GatsbyImage image={image} alt={hotel.hotelName} />
           </ExternalLink>
         </ThumbnailWrapper>
@@ -235,13 +247,19 @@ const HotelInfoItem = props => {
       <ButtonWrapper>
         <ExternalLink
           href={`https://hb.afl.rakuten.co.jp/hgc/g0190dd6.uc73i72f.g0190dd6.uc73jb24/?pc=https%3A%2F%2Fcoupon.travel.rakuten.co.jp%2Fcoupon%2Fhotel%2F${props.no}`}
-          gaLabel={`HotelInfoItem_button_coupon_${hotel.hotelNo}`}
+          ga={{
+            eventLabel: 'HotelInfoItem_button_coupon',
+            eventValue: hotel.hotelNo,
+          }}
         >
           <CoolButton title="クーポンを確認する" />
         </ExternalLink>
         <ExternalLink
           href={url}
-          gaLabel={`HotelInfoItem_button_room_${hotel.hotelNo}`}
+          ga={{
+            eventLabel: 'HotelInfoItem_button_room',
+            eventValue: hotel.hotelNo,
+          }}
         >
           <CoolButton title="空室を確認する" />
         </ExternalLink>
