@@ -224,6 +224,10 @@ export const globalStyles = css`
     outline: none;
   }
 
+  a {
+    text-decoration:none;
+  }
+
   .btn-flat-dashed-filled {
     display: inline-block;
     padding: 0.5em 1em;
