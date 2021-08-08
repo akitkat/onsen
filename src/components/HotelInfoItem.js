@@ -140,8 +140,7 @@ const HotelInfoItem = props => {
         <ExternalLink
           href={url}
           ga={{
-            eventLabel: 'HotelInfoItem_hotelName',
-            eventValue: hotel.hotelNo,
+            eventLabel: `HotelInfoItem_hotelName_${hotel.hotelNo}`,
           }}
         >
           <h2>{hotel.hotelName}</h2>
@@ -152,8 +151,7 @@ const HotelInfoItem = props => {
           <ExternalLink
             href={url}
             ga={{
-              eventLabel: 'HotelInfoItem_thumbnail',
-              eventValue: hotel.hotelNo,
+              eventLabel: `HotelInfoItem_thumbnail_${hotel.hotelNo}`,
             }}
           >
             <GatsbyImage image={image} alt={hotel.hotelName} />
@@ -248,8 +246,7 @@ const HotelInfoItem = props => {
         <ExternalLink
           href={`https://hb.afl.rakuten.co.jp/hgc/g0190dd6.uc73i72f.g0190dd6.uc73jb24/?pc=https%3A%2F%2Fcoupon.travel.rakuten.co.jp%2Fcoupon%2Fhotel%2F${props.no}`}
           ga={{
-            eventLabel: 'HotelInfoItem_button_coupon',
-            eventValue: hotel.hotelNo,
+            eventLabel: `HotelInfoItem_button_coupon_${hotel.hotelNo}`,
           }}
         >
           <CoolButton title="クーポンを確認する" />
@@ -257,8 +254,7 @@ const HotelInfoItem = props => {
         <ExternalLink
           href={url}
           ga={{
-            eventLabel: 'HotelInfoItem_button_room',
-            eventValue: hotel.hotelNo,
+            eventLabel: `HotelInfoItem_button_room_${hotel.hotelNo}`,
           }}
         >
           <CoolButton title="空室を確認する" />

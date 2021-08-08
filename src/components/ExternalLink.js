@@ -13,7 +13,6 @@ const ExternalLink = props => {
       rel="noopener noreferrer nofollow"
       target="_blank"
       data-vars-event-label={props.ga.eventLabel}
-      data-vars-event-value={props.ga.eventValue}
       onClick={e => {
         trackCustomEvent({
           category: "External Link",
