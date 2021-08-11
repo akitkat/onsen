@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # hotels.json
-wget "https://script.google.com/macros/s/AKfycbzUSxFWZiYT8lRRPugCbxQzoGapYa3yPK9cP28_l6_1KHtd-byeB9eFhqp-g0-BupV2_w/exec" -O 'hotels.json'
+wget "https://script.google.com/macros/s/AKfycbxOMhfBA_4ii0NakiM1Zt0N2VuJG9gbioVZoBDTIUYMh2eUPjEh9KVB0LUW5j4gt_MzXg/exec" -O 'hotels.json'
 mv hotels.json static/data/
 
 # cache clear
