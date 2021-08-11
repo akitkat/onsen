@@ -21,11 +21,6 @@ module.exports = async ({
         name: 'hotelInfoItem',
       })
       fileNode.internal.content = hotel.image
-
-      if (fileNode) {
-        node.localFile___NODE = fileNode.id
-      }
-
       return fileNode
     })
   )
