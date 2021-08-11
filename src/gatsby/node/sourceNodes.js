@@ -1,5 +1,5 @@
 const { createRemoteFileNode } = require('gatsby-source-filesystem')
-const jsonHotels = require('../../static/data/hotels.json')
+const jsonHotels = require('../../../static/data/hotels.json')
 
 module.exports = async ({
   actions: { createNode },

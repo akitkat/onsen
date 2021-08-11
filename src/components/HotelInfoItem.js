@@ -126,10 +126,10 @@ const HotelInfoItem = props => {
     }
   `)
 
+  const hotel = JSON.parse(JSON.stringify(jsonHotels)).result_.find(e => e.hotelNo === parseInt(props.no))
   const url = `https://hb.afl.rakuten.co.jp/hgc/g0190dd6.uc73i72f.g0190dd6.uc73jb24/?pc=https%3A%2F%2Ftravel.rakuten.co.jp%2FHOTEL%2F${props.no}`
-  const image = getImage(data.allFile.edges.find(e => e.node.internal.content === props.image).node)
+  const image = getImage(data.allFile.edges.find(e => e.node.internal.content === hotel.image).node)
 
-  const hotel = JSON.parse(JSON.stringify(jsonHotels)).result_.find(e => e.hotelNo == props.no)
   const jalanUrl = `https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3599199&pid=887319502&vc_url=${encodeURI(hotel.jalanUrl)}`
   const ikyuUrl = `https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3599199&pid=887319524&vc_url=${encodeURI(hotel.ikyuUrl)}`
   const yahooUrl = `https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3599199&pid=887316004&vc_url=${encodeURI(hotel.yahooUrl)}%3Fsc_e%3Dafvc_ml`
