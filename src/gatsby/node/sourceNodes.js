@@ -11,16 +11,20 @@ module.exports = async ({
 
   await Promise.all(
     hotels.map(async (hotel) => {
-      const fileNode = await createRemoteFileNode({
-        url: hotel.image,
-        getCache,
-        store,
-        createNode,
-        createNodeId,
-        name: 'hotelInfoItem',
-      })
-      fileNode.internal.content = hotel.image
-      return fileNode
+      try {
+        const fileNode = await createRemoteFileNode({
+          url: hotel.image,
+          getCache,
+          store,
+          createNode,
+          createNodeId,
+          name: 'hotelInfoItem',
+        })
+        fileNode.internal.content = hotel.image
+        return fileNode
+      } catch (e) {
+        console.error(e)
+      }
     })
   )
 }
