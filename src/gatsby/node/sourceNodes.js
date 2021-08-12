@@ -19,6 +19,7 @@ module.exports = async ({
           createNode,
           createNodeId,
           name: 'hotelInfoItem',
+          ext: '.jpg',
         })
         fileNode.internal.content = hotel.image
         return fileNode
