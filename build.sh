@@ -8,7 +8,7 @@ mv -v hotels.json static/data/
 gatsby clean
 
 # build
-gatsby build
+gatsby build --no-colors --verbose
 
 # amp
 rm -rf public/amp
