@@ -3,7 +3,6 @@ const jsonHotels = require('../../../static/data/hotels.json')
 
 module.exports = async ({
   actions: { createNode },
-  node,
   createNodeId,
   cache,
   store,
