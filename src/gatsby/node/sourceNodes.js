@@ -4,6 +4,7 @@ const jsonHotels = require('../../../static/data/hotels.json')
 module.exports = async ({
   actions: { createNode },
   createNodeId,
+  getCache,
   store,
 }) => {
   const hotels = JSON.parse(JSON.stringify(jsonHotels)).result_
@@ -12,6 +13,7 @@ module.exports = async ({
     hotels.map(async (hotel) => {
       const fileNode = await createRemoteFileNode({
         url: hotel.image,
+        getCache,
         store,
         createNode,
         createNodeId,
