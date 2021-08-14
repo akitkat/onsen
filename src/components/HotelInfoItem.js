@@ -144,7 +144,7 @@ const HotelInfoItem = props => {
                 width="250"
                 height="250"
                 decoding="async"
-                data-src={`https://dmt84s1zqsoj0.cloudfront.net/image?w=500&h=500&rt=1&id=${hotel.hotelNo}`}
+                data-src={`https://dmt84s1zqsoj0.cloudfront.net/image?w=250&h=250&rt=1&id=${hotel.hotelNo}`}
                 data-srcset={`https://dmt84s1zqsoj0.cloudfront.net/image?w=300&h=300&rt=1&id=${hotel.hotelNo} 1x https://dmt84s1zqsoj0.cloudfront.net/image?w=500&h=500&e&rt=1&id=${hotel.hotelNo} 2x`}
                 alt={hotel.hotelName}
                 loading="lazy"
