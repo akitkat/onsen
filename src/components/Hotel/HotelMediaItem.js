@@ -84,7 +84,7 @@ const RakutenTravelItem = props => {
           <BannerWrapper>
             <img src={props.logoUrl} width="45" height="89" alt={props.alt} />
           </BannerWrapper>
-          {/* <Price>料金 {props.price} 円～</Price> */}
+          {props.price && <Price>料金 {props.price.toLocaleString()} 円～</Price>}
         </ExternalDescription>
       </ExternalLink>
     </Wrapper>

@@ -1,5 +1,5 @@
-import { GatsbyImage, getImage } from 'gatsby-plugin-image'
-import { graphql, useStaticQuery } from "gatsby"
+import 'lazysizes';
+import 'lazysizes/plugins/attrchange/ls.attrchange';
 
 import CoolButton from './Button/CoolButton'
 import ExternalLink from './ExternalLink'
@@ -109,27 +109,8 @@ const HotelMediaList = styled.div`
 `
 
 const HotelInfoItem = props => {
-  const data = useStaticQuery(graphql`
-    query {
-      allFile(filter: {name: {eq: "hotelInfoItem"}}) {
-        edges {
-          node {
-            childImageSharp {
-              gatsbyImageData
-            }
-            internal {
-              content
-            }
-          }
-        }
-      }
-    }
-  `)
-
   const hotel = JSON.parse(JSON.stringify(jsonHotels)).result_.find(e => e.hotelNo === parseInt(props.no))
   const url = `https://hb.afl.rakuten.co.jp/hgc/g0190dd6.uc73i72f.g0190dd6.uc73jb24/?pc=https%3A%2F%2Ftravel.rakuten.co.jp%2FHOTEL%2F${props.no}`
-  const image = getImage(data.allFile.edges.find(e => e.node.internal.content === hotel.image).node)
-
   const jalanUrl = `https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3599199&pid=887319502&vc_url=${encodeURI(hotel.jalanUrl)}`
   const ikyuUrl = `https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3599199&pid=887319524&vc_url=${encodeURI(hotel.ikyuUrl)}`
   const yahooUrl = `https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3599199&pid=887316004&vc_url=${encodeURI(hotel.yahooUrl)}%3Fsc_e%3Dafvc_ml`
@@ -154,7 +135,22 @@ const HotelInfoItem = props => {
               eventLabel: `HotelInfoItem_thumbnail_${hotel.hotelNo}`,
             }}
           >
-            <GatsbyImage image={image} alt={hotel.hotelName} />
+            <picture>
+              <source
+                type="image/webp"
+                srcSet={`https://dmt84s1zqsoj0.cloudfront.net/image?w=250&h=250&p=true&rt=1&id=${hotel.hotelNo} 1x https://dmt84s1zqsoj0.cloudfront.net/image?w=500&h=500&p=true&rt=1&id=${hotel.hotelNo} 2x`}
+              />
+              <img
+                width="250"
+                height="250"
+                decoding="async"
+                data-src={`https://dmt84s1zqsoj0.cloudfront.net/image?w=250&h=250&p=false&rt=1&id=${hotel.hotelNo}`}
+                data-srcset={`https://dmt84s1zqsoj0.cloudfront.net/image?w=300&h=300&rt=1&id=${hotel.hotelNo} 1x https://dmt84s1zqsoj0.cloudfront.net/image?w=500&h=500&e&rt=1&id=${hotel.hotelNo} 2x`}
+                alt={hotel.hotelName}
+                loading="lazy"
+                className="lazyload"
+                style={{"object-fit": "cover", opacity: 1}} />
+            </picture>
           </ExternalLink>
         </ThumbnailWrapper>
         <DescriptionWrapper>
