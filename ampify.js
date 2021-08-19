@@ -25,8 +25,7 @@ const googleanAlytics = {
       vars: {
         eventCategory: "External Link",
         eventAction: "Click",
-        eventLabel: "${eventLabel}",
-        eventValue: "${eventValue}"
+        eventLabel: "${eventLabel}"
       }
     }
   }
