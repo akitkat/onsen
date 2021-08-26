@@ -185,6 +185,7 @@ const HotelInfoItem = props => {
                 color="#EB5C02"
                 width="100%"
                 name="jalan"
+                pid="887319502"
               />
             </HotelMediaItemWrapper>
           </div>
@@ -201,6 +202,7 @@ const HotelInfoItem = props => {
                 color="#294B77"
                 width="100%"
                 name="ikyu"
+                pid="887319524"
               />
             </HotelMediaItemWrapper>
           </div>
@@ -217,6 +219,7 @@ const HotelInfoItem = props => {
                 color="#FF446A"
                 width="100%"
                 name="yahoo"
+                pid="887316004"
               />
             </HotelMediaItemWrapper>
           </div>
