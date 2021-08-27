@@ -61,10 +61,14 @@ glob("public/amp/**/*.html", {
           .append('<script async custom-element="amp-video" src="https://cdn.ampproject.org/v0/amp-video-0.1.js"></script>')
           .append('<script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>')
           .append('<script async src="https://cdn.ampproject.org/v0.js"></script>')
+          .append('<script async custom-element="amp-link-rewriter" src="https://cdn.ampproject.org/v0/amp-link-rewriter-0.1.js"></script>')
           .find('link[rel="amphtml"], link[rel="canonical"], link[as="script"]')
           .remove();
 
-        $('noscript').remove();
+        $('body')
+          .append('<amp-link-rewriter layout="nodisplay"><script type="application/json">{"output": "https://lsr.valuecommerce.com/ard?p=${vc_pid}&u=${href}&vcptn=${vc_ptn}&s=SOURCE_URL&r=DOCUMENT_REFERRER","vars": { "vc_pid": "887349817", "vc_ptn": "ampls" }}</script></amp-link-rewriter>')
+
+          $('noscript').remove();
         $('html').attr('amp', '');
 
         if ($('head meta[content="width=device-width,minimum-scale=1,initial-scale=1"]').length === 0) {
@@ -102,7 +106,7 @@ glob("public/amp/**/*.html", {
             }
           }
         });
-        
+
         // カスタム
         $('amp-iframe').attr('sandbox','allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox');
         $('amp-iframe').attr('layout','responsive');
@@ -113,7 +117,7 @@ glob("public/amp/**/*.html", {
         // Google Analytics
         $('head').append('<script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>');
         $('amp-analytics').remove();
-        
+
         $('body').prepend(`<amp-analytics type="googleanalytics" id="analytics1"><script type="application/json">${JSON.stringify(googleanAlytics)}</script></amp-analytics>`);
 
         $('amp-img').attr('layout', 'responsive');

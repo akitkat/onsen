@@ -111,9 +111,6 @@ const HotelMediaList = styled.div`
 const HotelInfoItem = props => {
   const hotel = JSON.parse(JSON.stringify(jsonHotels)).result_.find(e => e.hotelNo === parseInt(props.no))
   const url = `https://hb.afl.rakuten.co.jp/hgc/g0190dd6.uc73i72f.g0190dd6.uc73jb24/?pc=https%3A%2F%2Ftravel.rakuten.co.jp%2FHOTEL%2F${props.no}`
-  const jalanUrl = `https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3599199&pid=887319502&vc_url=${encodeURI(hotel.jalanUrl)}`
-  const ikyuUrl = `https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3599199&pid=887319524&vc_url=${encodeURI(hotel.ikyuUrl)}`
-  const yahooUrl = `https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3599199&pid=887316004&vc_url=${encodeURI(hotel.yahooUrl)}%3Fsc_e%3Dafvc_ml`
 
   return (
     <Wrapper>
@@ -178,7 +175,7 @@ const HotelInfoItem = props => {
             <HotelMediaItemWrapper>
               <HotelMediaItem
                 hotelNo={hotel.hotelNo}
-                url={jalanUrl}
+                url={hotel.jalanUrl}
                 title={hotel.hotelName}
                 logoUrl="https://aff.valuecommerce.ne.jp/img/siteLogo/2130725.gif"
                 alt="じゃらん"
@@ -195,7 +192,7 @@ const HotelInfoItem = props => {
             <HotelMediaItemWrapper>
               <HotelMediaItem
                 hotelNo={hotel.hotelNo}
-                url={ikyuUrl}
+                url={hotel.ikyuUrl}
                 title={hotel.hotelName}
                 logoUrl="https://aff.valuecommerce.ne.jp/img/siteLogo/221.gif"
                 alt="一休"
@@ -212,7 +209,7 @@ const HotelInfoItem = props => {
             <HotelMediaItemWrapper>
               <HotelMediaItem
                 hotelNo={hotel.hotelNo}
-                url={yahooUrl}
+                url={hotel.yahooUrl}
                 title={hotel.hotelName}
                 logoUrl="https://aff.valuecommerce.ne.jp/img/siteLogo/2244419.gif"
                 alt="Yahoo!トラベル"

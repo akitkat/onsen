@@ -74,7 +74,7 @@ const RakutenTravelItem = props => {
           eventLabel: `HotelMediaItem_${props.name}_${props.hotelNo}`,
         }}
       >
-        {props.pid && <img src={`//ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=3599199&pid=${props.pid}`} height="1" width="0" border="0"></img>}
+        {/* {props.pid && <img src={`//ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=3599199&pid=${props.pid}`} height="1" width="0" border="0"></img>} */}
         <NoticeTitleArea>
           <NoticeCardLabelWrapper>
             <NoticeCardLabel></NoticeCardLabel>

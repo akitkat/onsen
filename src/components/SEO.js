@@ -71,6 +71,10 @@ const SEO = ({ title, description, image, slug = null, publishDateISO = null, up
       <meta name="twitter:description" content={metaDescription} />
       <link rel="amphtml" href={ampHtml} />
 
+      {/* ValueCommerce */}
+      <script type="text/javascript" language="javascript">var vc_pid = "887349817";</script>
+      <script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
+
       {updatedAtISO && <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>}
     </Helmet>
   )
