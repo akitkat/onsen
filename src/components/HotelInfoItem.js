@@ -170,12 +170,12 @@ const HotelInfoItem = props => {
             />
           </HotelMediaItemWrapper>
         </div>
-        {! ['NULL', ''].includes(hotel.jalanUrl) && (
+        {! ['NULL', ''].includes(hotel.jUrl) && (
           <div>
             <HotelMediaItemWrapper>
               <HotelMediaItem
                 hotelNo={hotel.hotelNo}
-                url={hotel.jalanUrl}
+                url={hotel.jUrl}
                 title={hotel.hotelName}
                 logoUrl="https://aff.valuecommerce.ne.jp/img/siteLogo/2130725.gif"
                 alt="じゃらん"
@@ -187,12 +187,12 @@ const HotelInfoItem = props => {
             </HotelMediaItemWrapper>
           </div>
         )}
-        {! ['NULL', ''].includes(hotel.ikyuUrl) && (
+        {! ['NULL', ''].includes(hotel.iUrl) && (
           <div>
             <HotelMediaItemWrapper>
               <HotelMediaItem
                 hotelNo={hotel.hotelNo}
-                url={hotel.ikyuUrl}
+                url={hotel.iUrl}
                 title={hotel.hotelName}
                 logoUrl="https://aff.valuecommerce.ne.jp/img/siteLogo/221.gif"
                 alt="一休"
@@ -204,12 +204,12 @@ const HotelInfoItem = props => {
             </HotelMediaItemWrapper>
           </div>
         )}
-        {! ['NULL', ''].includes(hotel.yahooUrl) && (
+        {! ['NULL', ''].includes(hotel.yUrl) && (
           <div>
             <HotelMediaItemWrapper>
               <HotelMediaItem
                 hotelNo={hotel.hotelNo}
-                url={hotel.yahooUrl}
+                url={hotel.yUrl}
                 title={hotel.hotelName}
                 logoUrl="https://aff.valuecommerce.ne.jp/img/siteLogo/2244419.gif"
                 alt="Yahoo!トラベル"
