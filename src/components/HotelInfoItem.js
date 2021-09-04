@@ -109,7 +109,7 @@ const HotelMediaList = styled.div`
 `
 
 const HotelInfoItem = props => {
-  const hotel = JSON.parse(JSON.stringify(jsonHotels)).result_.find(e => e.hotelNo === parseInt(props.no))
+  const hotel = JSON.parse(JSON.stringify(jsonHotels)).find(e => e.hotelNo === parseInt(props.no))
   const url = `https://hb.afl.rakuten.co.jp/hgc/g0190dd6.uc73i72f.g0190dd6.uc73jb24/?pc=https%3A%2F%2Ftravel.rakuten.co.jp%2FHOTEL%2F${props.no}`
 
   return (
