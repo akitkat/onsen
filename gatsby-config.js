@@ -78,7 +78,7 @@ module.exports = {
           {
             resolve: `gatsby-remark-component`,
             options: {
-              components: ['hotel-info-item']
+              components: ['hotel-info-item', 'golf-course-item']
             }
           },
           {

@@ -1,3 +1,4 @@
+import GolfCourseItem from "../components/Golf/golfCourseItem"
 import HotelInfoItem from "../components/HotelInfoItem"
 import React from 'react'
 import RehypeReact from "rehype-react"
@@ -117,6 +118,7 @@ const PageBody = props => {
     createElement: React.createElement,
     components: {
       'hotel-info-item': HotelInfoItem,
+      'golf-course-item': GolfCourseItem,
     }
   }).Compiler
 

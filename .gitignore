@@ -9,3 +9,4 @@ contentful-import-error-log*
 contentful-export*.json
 contentful/
 static/data/hotels.json
+static/data/golfCourse.json
