@@ -70,7 +70,7 @@ const TableWrapper = styled.div`
 
 const Table = styled.table`
   border-collapse: collapse;
-  font-size: .9em;
+  font-size: 0.9em;
 `
 
 const TableTh = styled.th`
@@ -141,8 +141,7 @@ const GolfCourseItem = (props) => {
           <p>
             {golfCourse.golfCourseCaption.length >= 300
               ? `${golfCourse.golfCourseCaption.substr(0, 300)}...`
-              : golfCourse.golfCourseCaption
-            }
+              : golfCourse.golfCourseCaption}
           </p>
         </DescriptionWrapper>
       </InfoWrapper>
@@ -165,8 +164,18 @@ const GolfCourseItem = (props) => {
             eventLabel: `GolfCourseItem_button_rakuten_${golfCourse.golfCourseId}`,
           }}
         >
-          <CoolButton title="プランを確認する" />
+          <CoolButton title="楽天GORAでプランを確認する" />
         </ExternalLink>
+        {!['NULL', ''].includes(golfCourse.jUrl) && (
+          <ExternalLink
+            href={golfCourse.jUrl}
+            ga={{
+              eventLabel: `GolfCourseItem_button_jalan_${golfCourse.golfCourseId}`,
+            }}
+          >
+            <CoolButton title="じゃらんでプランを確認する" />
+          </ExternalLink>
+        )}
       </ButtonWrapper>
     </Wrapper>
   )
