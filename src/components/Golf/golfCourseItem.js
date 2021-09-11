@@ -97,6 +97,7 @@ const GolfCourseItem = (props) => {
   const golfCourse = JSON.parse(JSON.stringify(jsonGolfCourse)).find(
     (e) => e.golfCourseId === parseInt(props.id)
   )
+
   return (
     <Wrapper>
       <div>
