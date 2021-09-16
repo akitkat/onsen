@@ -121,14 +121,14 @@ const GolfCourseItem = (props) => {
             <picture>
               <source
                 type="image/webp"
-                srcSet={`https://dmt84s1zqsoj0.cloudfront.net/image?w=250&h=250&p=true&rt=2&id=${golfCourse.golfCourseId} 1x https://dmt84s1zqsoj0.cloudfront.net/image?w=500&h=500&p=true&rt=2&id=${golfCourse.golfCourseId} 2x`}
+                srcSet={`https://dmt84s1zqsoj0.cloudfront.net/image?w=250&h=250&p=true&rt=2&id=${golfCourse.golfCourseId} 1x, https://dmt84s1zqsoj0.cloudfront.net/image?w=500&h=500&p=true&rt=2&id=${golfCourse.golfCourseId} 2x`}
               />
               <img
                 width="250"
                 height="250"
                 decoding="async"
                 data-src={`https://dmt84s1zqsoj0.cloudfront.net/image?w=250&h=250&rt=2&id=${golfCourse.golfCourseId}`}
-                data-srcset={`https://dmt84s1zqsoj0.cloudfront.net/image?w=300&h=300&rt=2&id=${golfCourse.golfCourseId} 1x https://dmt84s1zqsoj0.cloudfront.net/image?w=500&h=500&e&rt=2&id=${golfCourse.golfCourseId} 2x`}
+                data-srcset={`https://dmt84s1zqsoj0.cloudfront.net/image?w=300&h=300&rt=2&id=${golfCourse.golfCourseId} 1x, https://dmt84s1zqsoj0.cloudfront.net/image?w=500&h=500&e&rt=2&id=${golfCourse.golfCourseId} 2x`}
                 alt={golfCourse.golfCourseName}
                 loading="lazy"
                 className="lazyload"
