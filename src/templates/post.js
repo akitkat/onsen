@@ -6,17 +6,8 @@ import PostDetails from '../components/PostDetails'
 import React from 'react'
 import SEO from '../components/SEO'
 import ShareButtonList from '../components/ShareButtonList'
-import Sidebar from '../components/Sidebar'
 import TagList from '../components/TagList'
 import { graphql } from 'gatsby'
-import styled from '@emotion/styled'
-
-const ContentWrapper = styled.div`
-  @media screen and (min-width: ${props => props.theme.responsive.medium}) {
-    display: flex;
-    justify-content: space-between;
-  }
-`
 
 const PostTemplate = ({ data, pageContext }) => {
   const {
@@ -55,17 +46,12 @@ const PostTemplate = ({ data, pageContext }) => {
       />
       <Hero title={title} image={heroImage} height={'50vh'} />
       <Container>
-        <ContentWrapper>
-          <div>
-            {tags && <TagList tags={tags} basePath={basePath} />}
-            <ShareButtonList title={title} url={`${siteUrl}/${slug}`} />
-            <PostDetails
-              date={updatedAtISO}
-            />
-            <PageBody body={body} />
-          </div>
-          <Sidebar />
-        </ContentWrapper>
+        {tags && <TagList tags={tags} basePath={basePath} />}
+        <ShareButtonList title={title} url={`${siteUrl}/${slug}`} />
+        <PostDetails
+          date={updatedAtISO}
+        />
+        <PageBody body={body} />
       </Container>
     </Layout>
   )
