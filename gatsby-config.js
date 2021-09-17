@@ -155,6 +155,12 @@ module.exports = {
         name: `images`,
         path: './src/images/',
       },
+    },
+    {
+      resolve: 'gatsby-plugin-zopfli',
+      options: {
+        extensions: ['css', 'html', 'js']
+      }
     }
   ],
 }
